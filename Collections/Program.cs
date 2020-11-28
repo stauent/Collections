@@ -241,8 +241,16 @@ namespace Collections
             DaysOfTheWeekCollection days = new DaysOfTheWeekCollection();
             foreach(string day in days)
             {
-                Console.WriteLine($"Non generic day: {day}");
+                foreach (string day2 in days)
+                {
+                    if (day2 == "Wed")
+                        break;
+                    Console.WriteLine($"Inner: {day2}");
+                }
+                Console.WriteLine($"Outter: {day}");
             }
+
+
             IEnumerator nonGeneric = days.GetEnumerator();
             while (nonGeneric.MoveNext())
             {
@@ -299,6 +307,7 @@ namespace Collections
                 double ave = Math.Round(s.TotalTicks / (double)(RunSpeedTests.maxElements), 3);
                 Console.WriteLine($"{s.TestType} took {s.TotalTicks} ticks, average ticks per action {ave}");
             }
+            Console.ReadKey();
         }
     }
 
