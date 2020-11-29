@@ -290,34 +290,6 @@ namespace Collections
                 Console.WriteLine($"Odd number {n}");
             }
 
-            Console.WriteLine("\r\n\r\nNo iterator, so MontherMonkey can't enumerate children with foreach==========================");
-            MontherMonkey<Monkey> mom = new MontherMonkey<Monkey>();
-            IMonkey Tobby = mom.GiveBirth("Tobby");
-            IMonkey Jack =  mom.GiveBirth("Jack");
-            IMonkey Gordo = mom.GiveBirth("Gordo");
-            Tobby.HaveBirthday();
-            Tobby.HaveBirthday();
-            Gordo.HaveBirthday();
-            //foreach(IMonkey monkey in mom)
-            //{
-            //    Console.WriteLine($"{monkey}");
-            //}
-
-            Console.WriteLine("\r\n\r\nEnumerableMontherMonkey implements IEnumerable so foreach is OK==========================");
-            EnumerableMontherMonkey<Monkey> enumerableMom = new EnumerableMontherMonkey<Monkey>();
-            Tobby = enumerableMom.GiveBirth("Tobby");
-            Jack = enumerableMom.GiveBirth("Jack");
-            Gordo = enumerableMom.GiveBirth("Gordo");
-            Tobby.HaveBirthday();
-            Tobby.HaveBirthday();
-            Gordo.HaveBirthday();
-            foreach (IMonkey monkey in enumerableMom)
-            {
-                Console.WriteLine($"{monkey}");
-            }
-
-
-
 
             //----------------- Speed test ------------------------------------------
             List<SpeedTest> speed = new List<SpeedTest>();
